@@ -5,7 +5,7 @@ import shortid from 'shortid';
 
 class MainContainer extends React.Component {
   state = {
-    tweets: []
+    tweets: this.props.initialTweets,
   };
   addNewTweet = (newTweetText) => {
     this.setState((prevState) => ({

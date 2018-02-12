@@ -8,7 +8,7 @@ class App extends React.PureComponent {
     initialData: PropTypes.object,
   };
   render() {
-    return <MainContainer />;
+    return <MainContainer initialTweets={this.props.initialData.tweets} />;
   }
 }
 
