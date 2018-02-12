@@ -2,19 +2,25 @@ import React from 'react';
 
 class TweetItem extends React.Component {
   render() {
+    const {
+      name,
+      timeDisplay,
+      text,
+      likes,
+      replies,
+      retweets,
+    } = this.props.tweet;
     return (
-      <div>
+      <div className="tweet-item">
         <div>
-          <span>Justin Searls</span>
-          <span>57m</span>
+          <span>{name}</span>
+          <span>{timeDisplay}</span>
         </div>
+        <div>{text}</div>
         <div>
-          Hello, this is a fake tweet. Sad.
-        </div>
-        <div>
-          <span>REP</span>
-          <span>RET</span>
-          <span>LIKES</span>
+          <span>{replies}</span>
+          <span>{retweets}</span>
+          <span>{likes}</span>
         </div>
       </div>
     );
