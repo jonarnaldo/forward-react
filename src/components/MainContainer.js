@@ -35,6 +35,38 @@ const fakeData = {
   ],
 };
 
+// const fakeData2 = {
+//   tweets: [
+//     {
+//       name: 'Justin',
+//       timeDisplay: '57m',
+//       text: 'Hello this is a semi-fake tweet 4',
+//       id: 'oeuaoeuaoeuaoeuou',
+//       likes: 7,
+//       replies: 18,
+//       retweets: 0,
+//     },
+//     {
+//       name: 'Justin',
+//       timeDisplay: '57m',
+//       text: 'Hello this is a semi-fake tweet 5',
+//       id: 'oekjeuaoeuq;kjq',
+//       likes: 7,
+//       replies: 18,
+//       retweets: 0,
+//     },
+//     {
+//       name: 'Justin',
+//       timeDisplay: '57m',
+//       text: 'Hello this is a semi-fake tweet 6',
+//       id: 'qoueaujk;kqjk',
+//       likes: 7,
+//       replies: 18,
+//       retweets: 0,
+//     },
+//   ],
+// };
+//
 class MainContainer extends React.Component {
   state = {
     tweets: fakeData.tweets,
