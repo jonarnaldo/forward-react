@@ -13,17 +13,25 @@ class TweetBox extends React.Component {
     return this.state.newTweetText.length <= 280;
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    if (this.isValid()) {
+      this.props.onSubmit(this.state.newTweetText);
+    }
+  }
+
   render() {
+    const isValid = this.isValid();
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <textarea
           name="tweetText"
           value={this.state.newTweetText}
           required
           onChange={this.handleInputChange}
         />
-        Valid: {this.isValid() ? 'Yes': 'No'}
-        <button>Tweet</button>
+        Valid: {isValid ? 'Yes': 'No'}
+        <button disabled={!isValid}>Tweet</button>
       </form>
     );
   }

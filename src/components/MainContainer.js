@@ -1,6 +1,7 @@
 import React from 'react';
 import TweetBox from './TweetBox';
 import TweetList from './TweetList';
+import shortid from 'shortid';
 
 const fakeData = {
   tweets: [
@@ -35,11 +36,30 @@ const fakeData = {
 };
 
 class MainContainer extends React.Component {
+  state = {
+    tweets: fakeData.tweets,
+  };
+  addNewTweet = (newTweetText) => {
+    this.setState((prevState) => ({
+      tweets: [
+        {
+          text: newTweetText,
+          name: 'Mr. Guest',
+          timeDisplay: 'just now',
+          id: shortid(),
+          likes: 0,
+          replies: 0,
+          retweets: 0,
+        },
+        ...prevState.tweets,
+      ],
+    }));
+  };
   render() {
     return (
       <div>
-        <TweetBox />
-        <TweetList tweets={fakeData.tweets} />
+        <TweetBox onSubmit={this.addNewTweet} />
+        <TweetList tweets={this.state.tweets} />
       </div>
     );
   }
