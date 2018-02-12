@@ -61,6 +61,7 @@
     "react-dom": "^16.2.0",
     "sass-loader": "^6.0.6",
     "serialize-javascript": "^1.4.0",
+    "shortid": "^2.2.8",
     "style-loader": "^0.20.1",
     "webpack": "^3.11.0",
     "webpack-chunk-hash": "^0.5.0"

@@ -38,6 +38,42 @@ app.get('/', async (req, res) => {
   }
 });
 
+const data = {
+  tweets: [
+    {
+      name: 'Justin',
+      timeDisplay: '57m',
+      text: 'Hello this is a semi-fake tweet 1',
+      id: 'oeuaoeuaou',
+      likes: 7,
+      replies: 18,
+      retweets: 0,
+    },
+    {
+      name: 'Justin',
+      timeDisplay: '57m',
+      text: 'Hello this is a semi-fake tweet 2',
+      id: 'oekjq;kjq',
+      likes: 7,
+      replies: 18,
+      retweets: 0,
+    },
+    {
+      name: 'Justin',
+      timeDisplay: '57m',
+      text: 'Hello this is a semi-fake tweet 3',
+      id: 'qjk;kqjk',
+      likes: 7,
+      replies: 18,
+      retweets: 0,
+    },
+  ],
+};
+
+app.get('/api/tweets', (req, res) => {
+  res.send(data);
+});
+
 app.listen(config.port, config.host, () => {
   fs.writeFileSync(
     path.resolve('.reactful.json'),
